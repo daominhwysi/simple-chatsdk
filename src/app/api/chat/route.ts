@@ -45,10 +45,10 @@ const config = {
       //     },
       //   },
       // ],
-export async function POST(request : NextRequest) {
+export async function GET(request : NextRequest) {
   const { conversationId } = await request.json()
   const messages = await prisma.message.findMany({
-    where: {conversationId},
+    where: { conversationId },
     orderBy: {'sequence': 'asc'},
     include: {
       storageRefs: true

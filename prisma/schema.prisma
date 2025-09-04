@@ -38,7 +38,7 @@ enum MessageRole {
 model Message {
   id String @id @default(cuid())
   role MessageRole
-  content String
+  content String?
   storageRefs   StorageRef[]
   conversationId String
   sequence Int
